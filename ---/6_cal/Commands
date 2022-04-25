@@ -1,0 +1,6 @@
+flex cal.l
+bison -dy cal.y
+gcc lex.yy.c y.tab.c
+a.exe
+
+
