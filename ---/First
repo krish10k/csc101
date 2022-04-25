@@ -1,0 +1,18 @@
+from re import A
+
+
+grammar = [['S','aBc'],['A','B'],['B','b']]
+# s=A
+# A=B
+# B=b
+for i in range(len(grammar)):
+    if grammar[i][1][0].islower() or grammar[i][1][0]=='#':
+        print(f'First({grammar[i][0]}) = {grammar[i][1][0]}')
+    else:
+        val = grammar[i][1][0]
+        while not val.islower() or val=='#':
+            for j in range(len(grammar)):
+                if grammar[j][0]==val:
+                    val = grammar[j][1][0]
+                    break
+        print(f'First({grammar[i][0]}) = {val}')
